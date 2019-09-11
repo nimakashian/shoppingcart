@@ -10,4 +10,6 @@ public class ShoppingcartApplication {
         SpringApplication.run(ShoppingcartApplication.class, args);
     }
 
+    //TODO security
+    //TODO react
 }
