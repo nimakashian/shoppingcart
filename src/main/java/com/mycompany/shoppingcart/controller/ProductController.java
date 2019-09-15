@@ -59,7 +59,6 @@ public class ProductController {
         return ResponseEntity.ok().header("Location", location.toString()).build();
     }
 
-    //TODO ? json input
     @RequestMapping(value = "/product", method = {RequestMethod.POST, RequestMethod.PUT})
     public ResponseEntity<?> createProduct(@Valid @RequestBody Product product, Errors errors) {
         if (errors.hasErrors()) {
@@ -78,12 +77,6 @@ public class ProductController {
         return ResponseEntity.noContent().build();
     }
 
-    //TODO multiple status ?
-    @ExceptionHandler
-    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    public ProductValidationError handleError(Exception e) {
-        return new ProductValidationError(e.getMessage());
-    }
 
 
 }

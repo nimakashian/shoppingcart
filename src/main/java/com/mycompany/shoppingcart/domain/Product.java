@@ -18,6 +18,7 @@ public class Product extends ShopEntity {
     private String pcode;
     private String name;
     private Float price;
+    private Integer residue;
     private LocalDateTime expire;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(referencedColumnName = "id")

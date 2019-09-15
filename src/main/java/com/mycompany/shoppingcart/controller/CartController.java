@@ -1,17 +1,18 @@
 package com.mycompany.shoppingcart.controller;
 
 
+import com.mycompany.shoppingcart.domain.OrderDetail;
 import com.mycompany.shoppingcart.domain.Orders;
 import com.mycompany.shoppingcart.domain.Product;
+import com.mycompany.shoppingcart.dto.OrderDetailDto;
 import com.mycompany.shoppingcart.repoaitory.OrderDetailRepository;
 import com.mycompany.shoppingcart.repoaitory.OrdersRepository;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -43,5 +44,21 @@ public class CartController {
         }
         return ResponseEntity.notFound().build();
 
+    }
+
+    @PostMapping("/cart/new")
+    public ResponseEntity<Integer> newCart(@RequestBody Orders orders){
+        Orders ordersResult=ordersRepository.save(orders);
+        return ResponseEntity.ok(ordersResult.getOrderNumber());
+    }
+
+    //TODO dto?
+    @PostMapping("/cart/addprod")
+    public ResponseEntity<Orders> addProductCart(@RequestBody OrderDetailDto orderDetailDto){
+        OrderDetail orderDetail1=orderDetailDto.createOrderDetail();
+
+        OrderDetail orderDetailResult=orderDetailRepository.save(orderDetail1);
+
+        return ResponseEntity.ok(orderDetailResult.getOrders());
     }
 }
