@@ -32,8 +32,6 @@ public class CartController {
     @GetMapping("/cart")
     public ResponseEntity<Iterable<Orders>> getOrders() {
         return ResponseEntity.ok(ordersRepository.findAll());
-
-
     }
 
     @GetMapping("/cart/{orderNumber}")
@@ -52,13 +50,11 @@ public class CartController {
         return ResponseEntity.ok(ordersResult.getOrderNumber());
     }
 
-    //TODO dto?
+    
     @PostMapping("/cart/addprod")
     public ResponseEntity<Orders> addProductCart(@RequestBody OrderDetailDto orderDetailDto){
         OrderDetail orderDetail1=orderDetailDto.createOrderDetail();
-
         OrderDetail orderDetailResult=orderDetailRepository.save(orderDetail1);
-
         return ResponseEntity.ok(orderDetailResult.getOrders());
     }
 }
