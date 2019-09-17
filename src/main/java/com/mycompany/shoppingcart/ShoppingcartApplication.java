@@ -11,6 +11,6 @@ public class ShoppingcartApplication {
     }
 
     //TODO security
-    //TODO junit boot2 mocking
+
 
 }

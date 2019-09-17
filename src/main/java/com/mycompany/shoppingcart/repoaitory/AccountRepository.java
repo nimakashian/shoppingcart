@@ -4,6 +4,8 @@ package com.mycompany.shoppingcart.repoaitory;
 import com.mycompany.shoppingcart.domain.Account;
 import org.springframework.data.repository.CrudRepository;
 
-public interface AccountRepository extends CrudRepository<Account,String> {
+import java.util.Optional;
 
+public interface AccountRepository extends CrudRepository<Account,String> {
+    Optional<Account> findByUsername(String username);
 }
