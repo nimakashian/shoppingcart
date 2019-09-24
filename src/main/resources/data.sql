@@ -8,13 +8,13 @@ values ('13','tehran ....','a@g.com','admin name','009898123', 'address to call 
 -- -- ---------------------------------------
 insert into ACCOUNT (ID,USERNAME, ACTIVE, PASSWORD, USERROLE, DESCRIPTION, CREATED, ADDRESS_ID)
 values (random_uuid(),'user', 1,
-        '$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'client','who able to sale',sysdate,'11');
+        '123', 'client','who able to sale',sysdate,'11');
 insert into ACCOUNT (ID,USERNAME, ACTIVE, PASSWORD, USERROLE, DESCRIPTION, CREATED, ADDRESS_ID)
 values (random_uuid(),'manager', 1,
-        '$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'manager','who mange the orders',sysdate,'12');
+        '123', 'manager','who mange the orders',sysdate,'12');
 insert into ACCOUNT (ID,USERNAME, ACTIVE, PASSWORD, USERROLE, DESCRIPTION, CREATED, ADDRESS_ID)
 values (random_uuid(),'admin', 1,
-        '$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'admin','who manage the shop',sysdate,'13');
+        '123', 'ADMIN','who manage the shop',sysdate,'13');
 -- ----------------
 insert into PRODUCT (ID,PCODE, NAME, PRICE,  EXPIRE, DESCRIPTION, RESIDUE)
 values (random_uuid(),'p001', 'Mastering Spring 5.0', 100, '2020-09-11 10:34:02.18', 'Copyright © 2017 Packt Publishing',100);
