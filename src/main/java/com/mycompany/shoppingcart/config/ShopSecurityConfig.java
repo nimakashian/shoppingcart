@@ -60,6 +60,10 @@ public class ShopSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/**").hasRole("ADMIN")
                 .and()
+                .formLogin().loginPage("/login")
+                .and()
+                .logout().logoutSuccessUrl("logout")
+                .and()
                 .httpBasic();
     }
 

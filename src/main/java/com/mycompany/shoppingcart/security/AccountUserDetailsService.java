@@ -38,7 +38,6 @@ public class AccountUserDetailsService implements UserDetailsService {
                 String password;
                         password=passwordEncoder.encode(account.getPassword());
 
-
                 return User
                         .withUsername(account.getUsername())
                         .accountLocked(!account.getActive())
