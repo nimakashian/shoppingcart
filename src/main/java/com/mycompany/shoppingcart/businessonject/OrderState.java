@@ -1,4 +1,4 @@
-package com.mycompany.shoppingcart.definition;
+package com.mycompany.shoppingcart.businessonject;
 
 public enum OrderState {
 

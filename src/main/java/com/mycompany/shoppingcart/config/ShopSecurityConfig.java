@@ -62,7 +62,11 @@ public class ShopSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().loginPage("/login")
                 .and()
-                .logout().logoutSuccessUrl("logout")
+                .logout()
+                .logoutRequestMatcher(
+                        new AntPathRequestMatcher("/logout")
+                )
+                .logoutSuccessUrl("/login")
                 .and()
                 .httpBasic();
     }
